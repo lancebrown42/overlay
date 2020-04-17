@@ -22,8 +22,10 @@ function getJob() {
 };
 
 function gotJob(response) {
-    console.log(response);
-    $("div.payload").text("Time remaining: " + response.progress.printTimeLeft);
+    // console.log(response);
+	var remaining = response.progress.printTimeLeft;
+	remaining *= (1/60)
+    $("div#remaining").text("Time remaining: " + remaining);
     // console.log($("div.payload").html());
     // $("div.payload").html()
 
